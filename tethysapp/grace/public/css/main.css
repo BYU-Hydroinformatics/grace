@@ -1,0 +1,116 @@
+.map{
+    height:300px;
+    width:100%
+}
+.btn-run{
+    position:relative;
+    top:-5px;
+}
+.btn-stop{
+    position:relative;
+    top:-5px;
+}
+.btn-increase{
+    position:relative;
+    top:-5px;
+}
+.btn-decrease{
+    position:relative;
+    top:-5px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+
+.welcome-step {
+    font-size: 18px;
+}
+.welcome-substep1 {
+    font-size: 16px;
+}
+.welcome-substep2 {
+    font-size: 14px;
+}
+#help-modal .modal-dialog {
+    /*width: auto;*/
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#api-modal .modal-dialog {
+    width: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.modal-content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.modal-header {
+    min-height: 70px;
+}
+.modal-body {
+    position: fixed;
+    top: 70px;
+    bottom: 65px;
+    right: 1px;
+    left: 0;
+    overflow-y: auto;
+}
+.modal-footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-align-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 65px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.flex-container-row {
+    /*display: flex;*/
+    /*flex-flow: row wrap;*/
+    /*justify-content: space-around;*/
+    align-items: center;
+}
+/*.chart-inner {*/
+    /*position: absolute;*/
+    /*width: 100%;*/
+/*}*/
+/*.chart-wrapper {*/
+    /*position: relative;*/
+    /*padding-bottom: 40%;*/
+/*}*/
+
