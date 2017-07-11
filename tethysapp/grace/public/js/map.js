@@ -546,7 +546,7 @@ var GRACE_MAP = (function() {
         }
 
         var datastring = $get_plot.serialize();
-        console.log(datastring);
+
         $.ajax({
             type:"POST",
             url:'/apps/grace/plot-region/',
@@ -656,7 +656,7 @@ var GRACE_MAP = (function() {
         init_slider();
         gen_color_bar();
 
-        chart.legend.update({enabled:false});
+        //chart.legend.update({enabled:false});
 
         $("#speed").val((1/(animationDelay/1000)).toFixed(2));
         $("#select_layer").change(function(){

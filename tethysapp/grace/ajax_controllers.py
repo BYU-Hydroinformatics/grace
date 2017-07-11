@@ -143,6 +143,7 @@ def region_add(request):
 
         geoserver = session.query(Geoserver).get(geoserver_id)
         url,uname,pwd = geoserver.url,geoserver.username,geoserver.password
+
         process_shapefile(shapefile, url, uname, pwd, region_store, GRACE_NETCDF_DIR, GLOBAL_NETCDF_DIR,region_name,geoserver_id)
 
         response = {"success":"success"}

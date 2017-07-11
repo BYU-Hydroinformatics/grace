@@ -67,7 +67,7 @@ var GRACE_ADD_REGION = (function() {
     add_region = function(){
         reset_alert(); //Reset the alerts
         var region_name = $region_input.val();
-        var geoserver = $geoserver_select.val();
+        var geoserver = $("#geoserver-select option:selected").val();
         var shapefiles = $("#shp-upload-input")[0].files;
 
         if (/[^a-zA-Z0-9 ]/g.test(region_name) == true){
