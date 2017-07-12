@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd4c73e8-c4dd-4f70-9578-2e97b5bb5b77" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tethysapp/grace/ajax_controllers.py" afterPath="$PROJECT_DIR$/tethysapp/grace/ajax_controllers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tethysapp/grace/public/js/add_region.js" afterPath="$PROJECT_DIR$/tethysapp/grace/public/js/add_region.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tethysapp/grace/controllers.py" afterPath="$PROJECT_DIR$/tethysapp/grace/controllers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tethysapp/grace/public/js/map.js" afterPath="$PROJECT_DIR$/tethysapp/grace/public/js/map.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,6 +37,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="map.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tethysapp/grace/templates/grace/map.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="88" column="60" lean-forward="false" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="60" />
+              <folding>
+                <element signature="n#style#0;n#div#7;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tethysapp/grace/templates/grace/base.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,8 +62,18 @@
       <file leaf-file-name="add_region.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tethysapp/grace/public/js/add_region.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="378">
               <caret line="69" column="68" lean-forward="false" selection-start-line="69" selection-start-column="68" selection-end-line="69" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tethysapp/grace/controllers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="129" column="43" lean-forward="true" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -62,23 +82,23 @@
       <file leaf-file-name="map.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tethysapp/grace/public/js/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="785">
-              <caret line="674" column="0" lean-forward="false" selection-start-line="674" selection-start-column="0" selection-end-line="674" selection-end-column="0" />
+            <state relative-caret-position="66">
+              <caret line="574" column="22" lean-forward="true" selection-start-line="574" selection-start-column="22" selection-end-line="574" selection-end-column="22" />
               <folding>
-                <marker date="1499799452922" expanded="true" signature="17079:17500" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="17091:17466" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="17129:17443" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="17147:17421" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="17153:17392" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="17181:17375" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="17202:17346" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="18079:18501" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="18091:18467" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="18129:18444" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="18147:18422" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="18153:18393" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="18181:18376" ph="..." />
-                <marker date="1499799452922" expanded="true" signature="18202:18347" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="17226:17647" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="17238:17613" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="17276:17590" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="17294:17568" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="17300:17539" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="17328:17522" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="17349:17493" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="18226:18648" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="18238:18614" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="18276:18591" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="18294:18569" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="18300:18540" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="18328:18523" ph="..." />
+                <marker date="1499878370919" expanded="true" signature="18349:18494" ph="..." />
               </folding>
             </state>
           </provider>
@@ -92,26 +112,6 @@
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controllers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tethysapp/grace/controllers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1482">
-              <caret line="146" column="18" lean-forward="false" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tethysapp/grace/model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="39" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -193,6 +193,7 @@
       <find>convert</find>
       <find>shp_layer</find>
       <find>map_cen</find>
+      <find>map</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -212,7 +213,6 @@
         <option value="$PROJECT_DIR$/tethysapp/grace/templates/grace/base.html" />
         <option value="$PROJECT_DIR$/tethysapp/grace/app.py" />
         <option value="$PROJECT_DIR$/tethysapp/grace/grace.py" />
-        <option value="$PROJECT_DIR$/tethysapp/grace/controllers.py" />
         <option value="$USER_HOME$/tethys/src/static/tethys_portal/css/tethys_main.css" />
         <option value="$USER_HOME$/tethys/src/templates/header.html" />
         <option value="$PROJECT_DIR$/tethysapp/grace/templates/grace/global_map.html" />
@@ -220,9 +220,10 @@
         <option value="$PROJECT_DIR$/tethysapp/grace/utilities.py" />
         <option value="$PROJECT_DIR$/tethysapp/grace/public/js/global_map.js" />
         <option value="$PROJECT_DIR$/tethysapp/grace/gbyos.py" />
-        <option value="$PROJECT_DIR$/tethysapp/grace/public/js/map.js" />
         <option value="$PROJECT_DIR$/tethysapp/grace/public/js/add_region.js" />
         <option value="$PROJECT_DIR$/tethysapp/grace/ajax_controllers.py" />
+        <option value="$PROJECT_DIR$/tethysapp/grace/controllers.py" />
+        <option value="$PROJECT_DIR$/tethysapp/grace/public/js/map.js" />
       </list>
     </option>
   </component>
@@ -640,29 +641,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tethysapp/grace/templates/grace/map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="88" column="60" lean-forward="false" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tethysapp/grace/gbyos.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7704">
           <caret line="428" column="75" lean-forward="false" selection-start-line="428" selection-start-column="75" selection-end-line="428" selection-end-column="75" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tethysapp/grace/controllers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1482">
-          <caret line="146" column="18" lean-forward="false" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,14 +666,6 @@
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tethysapp/grace/templates/grace/add_geoserver.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -733,6 +710,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tethysapp/grace/templates/grace/add_geoserver.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tethysapp/grace/ajax_controllers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -743,33 +728,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tethysapp/grace/templates/grace/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="88" column="60" lean-forward="false" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#div#7;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tethysapp/grace/public/js/add_region.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="378">
           <caret line="69" column="68" lean-forward="false" selection-start-line="69" selection-start-column="68" selection-end-line="69" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tethysapp/grace/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="129" column="43" lean-forward="true" selection-start-line="129" selection-start-column="43" selection-end-line="129" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tethysapp/grace/public/js/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
-          <caret line="674" column="0" lean-forward="false" selection-start-line="674" selection-start-column="0" selection-end-line="674" selection-end-column="0" />
+        <state relative-caret-position="66">
+          <caret line="574" column="22" lean-forward="true" selection-start-line="574" selection-start-column="22" selection-end-line="574" selection-end-column="22" />
           <folding>
-            <marker date="1499799452922" expanded="true" signature="17079:17500" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="17091:17466" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="17129:17443" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="17147:17421" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="17153:17392" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="17181:17375" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="17202:17346" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="18079:18501" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="18091:18467" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="18129:18444" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="18147:18422" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="18153:18393" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="18181:18376" ph="..." />
-            <marker date="1499799452922" expanded="true" signature="18202:18347" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="17226:17647" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="17238:17613" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="17276:17590" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="17294:17568" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="17300:17539" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="17328:17522" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="17349:17493" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="18226:18648" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="18238:18614" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="18276:18591" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="18294:18569" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="18300:18540" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="18328:18523" ph="..." />
+            <marker date="1499878370919" expanded="true" signature="18349:18494" ph="..." />
           </folding>
         </state>
       </provider>

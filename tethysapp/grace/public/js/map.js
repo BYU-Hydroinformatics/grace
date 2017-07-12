@@ -62,6 +62,10 @@ var GRACE_MAP = (function() {
         layers_length = $region_element.attr('data-layers-length');
         color_bar = $region_element.attr('data-color-bar');
         color_bar = JSON.parse(color_bar);
+        range = $region_element.attr('data-range');
+        range = JSON.parse(range);
+        range_max = range[1];
+        range_min = range[0];
         cb_min = $region_element.attr('data-range-min');
         cb_max = $region_element.attr('data-range-max');
         map_center = $region_element.attr('data-map-center');
@@ -560,7 +564,8 @@ var GRACE_MAP = (function() {
                     },
                     chart: {
                         type:'area',
-                        zoomType: 'x'
+                        zoomType: 'x',
+                        height: 350
                     },
                     title: {
                         text:"Values at " +json_response.location,
@@ -581,7 +586,7 @@ var GRACE_MAP = (function() {
                     },
                     yAxis: {
                         title: {
-                            text: "Volume (cm)"
+                            text: "Total Terrestrial Water Storage Anomaly (cm)"
                         }
 
                     },
@@ -590,7 +595,7 @@ var GRACE_MAP = (function() {
                     },
                     series: [{
                         data:json_response.values,
-                        name: "Volume"
+                        name: "Height of Liquid Water"
                     }]
                 });
             }
@@ -667,7 +672,7 @@ var GRACE_MAP = (function() {
 
         $("#slider").on("slidechange", function(event, ui) {
             var x = tracker[ui.value];
-            chart.series[1].setData([[x,-50],[x,50]]);
+            chart.series[1].setData([[x,range_min],[x,range_max]]);
             var date_text = $("#select_layer option")[ui.value].text;
             $( "#grace-date" ).val(date_text); //Get the value from the slider
             var date_value = $("#select_layer option")[ui.value].value;

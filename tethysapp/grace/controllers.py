@@ -121,18 +121,18 @@ def map(request):
     grace_plot = TimeSeries(
         engine='highcharts',
         title=display_name+ ' GRACE Data',
-        y_axis_title='Volume',
+        y_axis_title='Total Terrestrial Water Storage Anomaly',
         y_axis_units='cm',
         series=[
             {
-                'name': 'Change in Volume',
+                'name': 'Height of Liquid Water',
                 'color': '#0066ff',
                 'data': volume_time_series,
             },
             {
                 'name': 'Tracker',
                 'color': '#ff0000',
-                'data': [[min(x_tracker), -50], [min(x_tracker), 50]]
+                'data': [[min(x_tracker), round(min(volume), 2)], [min(x_tracker), round(max(volume), 2)]]
             },
         ],
         width='100%',
