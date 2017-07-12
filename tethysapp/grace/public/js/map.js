@@ -559,9 +559,6 @@ var GRACE_MAP = (function() {
             success:function(result) {
                 var json_response = JSON.parse(result);
                 $("#plotter").highcharts({
-                    legend: {
-                        enabled: false
-                    },
                     chart: {
                         type:'area',
                         zoomType: 'x',
@@ -595,7 +592,7 @@ var GRACE_MAP = (function() {
                     },
                     series: [{
                         data:json_response.values,
-                        name: "Height of Liquid Water"
+                        name: "Total Terrestrial Water Storage Anomaly (cm)"
                     }]
                 });
             }

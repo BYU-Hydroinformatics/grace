@@ -19,6 +19,11 @@
 <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="API">
     <a data-toggle="modal" data-target="#api-modal"><span class="glyphicon glyphicon-info-sign"></span></a>
 </div>
+{% if 'map' in request.path  %}
+<div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Home">
+    <a href="{% url 'grace:home' %}"><span class="glyphicon glyphicon-home"></span></a>
+</div>
+{% endif %}
 {% endblock %}
 
 {% block after_app_content %}

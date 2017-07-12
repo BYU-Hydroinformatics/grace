@@ -170,18 +170,23 @@
         <input type="text" id="cbar-slider" readonly style="border:0; color:#f6931f; font-weight:normal;" value="50">
     </div>
     <div id="legend-bar"><div id="opacity-slider" class="col-md-4"></div><div class="col-md-2"></div><div id="max-slider" class="col-md-6"></div></div>
+    <br>
 </div>
-
-<div id="layers" name="layers" data-slider-max="{{slider_max}}"  data-color-bar="{{color_bar}}" data-range-min="-50" data-range-max="50" style="display:none;"></div>
 <br>
+<div id="layers" name="layers" data-slider-max="{{slider_max}}"  data-color-bar="{{color_bar}}" data-range-min="-50" data-range-max="50" style="display:none;"></div>
+
+
 <div>
     <div class="chart-wrapper">
         <div class="chart-inner">
             <div align="center" class="flex-container-row"><img id="view-file-loading" class="view-file hidden" src="/static/grace/images/loader.gif" /></div>
-            <div id="plotter" name="plotter" style="height:275px;width:100%" ></div>
+            <div id="plotter" name="plotter" style="height:350px;width:100%" ></div>
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
 {% endblock %}
 
 {% block scripts %}

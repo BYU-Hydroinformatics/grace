@@ -509,7 +509,8 @@ var LIBRARY_OBJECT = (function() {
                 $("#plotter").highcharts({
                     chart: {
                         type:'area',
-                        zoomType: 'x'
+                        zoomType: 'x',
+                        height:350
                     },
                     title: {
                         text:"Values at " +json_response.location,
@@ -530,7 +531,7 @@ var LIBRARY_OBJECT = (function() {
                     },
                     yAxis: {
                         title: {
-                            text: "LWE Thickness (cm)"
+                            text: "Total Terrestrial Water Storage Anomaly (cm)"
                         }
 
                     },
@@ -539,7 +540,7 @@ var LIBRARY_OBJECT = (function() {
                     },
                     series: [{
                         data:json_response.values,
-                        name: "LWE Thickness"
+                        name: "Total Terrestrial Water Storage Anomaly (cm)"
                     }]
                 });
                 $("#plotter").removeClass('hidden');

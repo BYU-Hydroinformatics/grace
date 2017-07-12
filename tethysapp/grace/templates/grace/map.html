@@ -39,11 +39,7 @@
     <button type="button" id="btn-get-plot" name="btn-get-plot" class="btn btn-default">Show Plot</button>
 </form>
 {% endblock%}
-{% block exit_button_override %}
-<div class="exit-button">
-    <a href="{% url 'grace:home' %}">Back</a>
-</div>
-{% endblock %}
+
 {% block app_content %}
 <div id="control-bar" class="control-bar row">
     <div class="animation col-md-2">
@@ -90,14 +86,14 @@
 <br>
     {% gizmo plot_view grace_plot %}
 <br>
-    <br>
     <div>
         <div class="chart-wrapper">
             <div class="chart-inner">
-                <div id="plotter" name="plotter" style="height:275px;width:100%" ></div>
+                <div id="plotter" name="plotter" style="height:350px;width:100%" ></div>
             </div>
         </div>
     </div>
+<br><br><br><br>
 {% endblock %}
 
 {% block scripts %}
