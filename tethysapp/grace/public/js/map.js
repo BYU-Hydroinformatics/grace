@@ -31,6 +31,7 @@ var GRACE_MAP = (function() {
         layers_dict,
         map,
         map_center,
+        $maxSlider,
         popup,
         plotter,
         public_interface, // Object returned by the module
@@ -154,9 +155,9 @@ var GRACE_MAP = (function() {
                 })
             })
         });
-        wms_source = new ol.source.ImageWMS();
+        wms_source = new ol.source.TileWMS();
 
-        wms_layer = new ol.layer.Image({
+        wms_layer = new ol.layer.Tile({
             source: wms_source
         });
 
@@ -432,8 +433,30 @@ var GRACE_MAP = (function() {
                 update_color_bar();
                 update_wms(date_value);
 
+            },start:function() {
+                var color_range = 45;
+                $("#cbar-slider").val(color_range);
+                var date_idx = $("#slider").slider("option","value");
+                var date_value = $("#select_layer option")[date_idx].value;
+                cb_max = 45;
+
+                var iter_size = cb_max / 10;
+                var cbar_val = -cb_max;
+                var new_cbar = [];
+                for (var i=0;i<=20;i+=1){
+                    new_cbar.push(parseFloat(cbar_val).toFixed(1));
+                    cbar_val += iter_size;
+                }
+                color_bar.forEach(function(color,i){
+                    color[1] = new_cbar[i];
+                });
+
+                update_color_bar();
+                update_wms(date_value);
+                $('#max-slider').slider("value", 45);
 
             }
+
         });
 
     };
@@ -480,7 +503,7 @@ var GRACE_MAP = (function() {
         var color_str = cbar_str();
         var store_name = $("#select_layer").find('option:selected').val();
         var layer_name = 'grace:'+store_name;
-        var sld_string = '<StyledLayerDescriptor version="1.0.0"><NamedLayer><Name>'+layer_name+'</Name><UserStyle><FeatureTypeStyle><Rule>\
+        var sld_string = '<StyledLayerDescriptor version="1.0.0"><NamedLayer><Name>'+layer_name+'</Name><UserStyle><isDefault></isDefault><FeatureTypeStyle><Rule>\
         <RasterSymbolizer> \
         <ColorMap>\
         <ColorMapEntry color="#000000" quantity="'+cb_min+'" label="nodata" opacity="0.0" />'+
@@ -493,20 +516,21 @@ var GRACE_MAP = (function() {
         </NamedLayer>\
         </StyledLayerDescriptor>';
 
-        wms_source = new ol.source.ImageWMS({
+        wms_source = new ol.source.TileWMS({
             url: wms_url,
             params: {'LAYERS':layer_name,'SLD_BODY':sld_string},
             serverType: 'geoserver',
             crossOrigin: 'Anonymous'
         });
 
-        wms_layer = new ol.layer.Image({
+        wms_layer = new ol.layer.Tile({
             source: wms_source
         });
 
+        // wms_source.mergeNewParams({'SLD_BODY':sld_string});
         map.addLayer(wms_layer);
 
-
+        //
 
     };
 
@@ -659,6 +683,8 @@ var GRACE_MAP = (function() {
         gen_color_bar();
 
         //chart.legend.update({enabled:false});
+        $maxSlider = $('#max-slider');
+        $maxSlider.slider('option', 'start').call($maxSlider);
 
         $("#speed").val((1/(animationDelay/1000)).toFixed(2));
         $("#select_layer").change(function(){

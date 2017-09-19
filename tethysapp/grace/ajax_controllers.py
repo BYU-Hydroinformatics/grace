@@ -330,7 +330,10 @@ def upload_shp(request):
     #Check if its an ajax post request
     if request.is_ajax() and request.method == 'POST':
         #Gettings the file list and converting the files to a geojson object. See utilities.py for the convert_shp function.
+        # shapefile = request.FILES.getlist('files')
+        # vals_from_shp(shapefile,GLOBAL_DIR)
         file_list = request.FILES.getlist('files')
+
         shp_json = convert_shp(file_list)
         gjson_obj = json.loads(shp_json)
 

@@ -13,7 +13,7 @@ from model import *
 
 NETCDF_DIR = '/grace/'
 
-@login_required()
+
 def home(request):
     """
     Controller for the app home page.
@@ -44,7 +44,7 @@ def home(request):
 
     return render(request, 'grace/home.html', context)
 
-@login_required()
+
 def api(request):
 
     context = {'host': 'http://%s' % request.get_host()}
@@ -53,7 +53,7 @@ def api(request):
 
 
 
-@login_required
+
 def map(request):
 
     context = {}
@@ -244,7 +244,7 @@ def map(request):
 #     context = {'grace_plot': grace_plot,'select_layer':select_layer,'layers_json':legend_json,'range':range,'slider_max':slider_max,'x_tracker':x_tracker,"color_bar":color_bar}
 #     return render(request, 'grace/nepal_graph.html', context)
 
-@login_required
+
 def global_map(request):
 
     color_bar = get_color_bar()

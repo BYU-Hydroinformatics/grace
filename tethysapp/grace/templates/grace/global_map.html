@@ -116,8 +116,8 @@
 <form id="get-plot" name="get-plot" action="plot-global/" method="POST">
     {% csrf_token %}
     <input type="text" name="point-lat-lon" id="point-lat-lon" hidden>
-    <input type="text" name="poly-lat-lon" id="poly-lat-lon" hidden>
-    <input type="text" name="shp-lat-lon" id="shp-lat-lon" hidden>
+    <input type="text" name="poly-lat-lon" id="poly-lat-lon" >
+    <input type="text" name="shp-lat-lon" id="shp-lat-lon" >
     <button type="button" id="btn-get-plot" name="btn-get-plot" class="btn btn-default">Show Plot</button>
 </form>
 <div class="warning"></div>
