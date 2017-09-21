@@ -28,6 +28,7 @@ var LIBRARY_OBJECT = (function() {
         layers,
         layers_dict,
         $modalUpload,
+        $maxSlider,
         map,
         popup,
         plotter,
@@ -355,7 +356,8 @@ var LIBRARY_OBJECT = (function() {
         map.removeLayer(wms_layer);
         var color_str = cbar_str();
         var store_name = $("#select_layer").find('option:selected').val();
-        var layer_name = 'globalgrace:'+store_name;
+        var layer_name = 'graceglobal:'+store_name;
+
         var sld_string = '<StyledLayerDescriptor version="1.0.0"><NamedLayer><Name>'+layer_name+'</Name><UserStyle><FeatureTypeStyle><Rule>\
         <RasterSymbolizer> \
         <ColorMap>\
@@ -370,7 +372,7 @@ var LIBRARY_OBJECT = (function() {
         </StyledLayerDescriptor>';
 
         wms_source = new ol.source.ImageWMS({
-            url: 'http://tethys.byu.edu:8181/geoserver/wms',
+            url: 'http://tethys.servirglobal.net:8181/geoserver/wms',
             params: {'LAYERS':layer_name,'SLD_BODY':sld_string},
             serverType: 'geoserver',
             crossOrigin: 'Anonymous'
@@ -388,7 +390,7 @@ var LIBRARY_OBJECT = (function() {
         // map.removeLayer(wms_layer);
         var color_str = cbar_str();
 
-        var layer_name = 'globalgrace:'+date_str;
+        var layer_name = 'graceglobal:'+date_str;
         var sld_string = '<StyledLayerDescriptor version="1.0.0"><NamedLayer><Name>'+layer_name+'</Name><UserStyle><FeatureTypeStyle><Rule>\
         <RasterSymbolizer> \
         <ColorMap> \
@@ -476,6 +478,28 @@ var LIBRARY_OBJECT = (function() {
                 update_color_bar();
                 update_wms(date_value);
 
+
+            },start:function() {
+                var color_range = 45;
+                $("#cbar-slider").val(color_range);
+                var date_idx = $("#slider").slider("option","value");
+                var date_value = $("#select_layer option")[date_idx].value;
+                cb_max = 45;
+
+                var iter_size = cb_max / 10;
+                var cbar_val = -cb_max;
+                var new_cbar = [];
+                for (var i=0;i<=20;i+=1){
+                    new_cbar.push(parseFloat(cbar_val).toFixed(1));
+                    cbar_val += iter_size;
+                }
+                color_bar.forEach(function(color,i){
+                    color[1] = new_cbar[i];
+                });
+
+                update_color_bar();
+                update_wms(date_value);
+                $('#max-slider').slider("value", 45);
 
             }
         });
@@ -694,6 +718,9 @@ var LIBRARY_OBJECT = (function() {
         init_slider();
         gen_color_bar();
         // get_geoserver_data();
+        $maxSlider = $('#max-slider');
+        $maxSlider.slider('option', 'start').call($maxSlider);
+
         $("#speed").val((1/(animationDelay/1000)).toFixed(2));
 
         $("#select_layer").change(function(){

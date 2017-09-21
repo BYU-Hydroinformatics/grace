@@ -19,8 +19,8 @@ def home(request):
     Controller for the app home page.
     """
 
-    # create_global_tiff("/grace/global/GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc","/home/tethys/geotiff_global/","lwe_thickness")
-    # upload_global_tiff("/home/tethys/geotiff_global/","http://tethys.servirglobal.net:8081/geoserver/rest/","globalgrace")
+    #create_global_tiff("/grace/global/GRCTellus.JPL.200204_201608.GLO.RL05M_1.MSCNv02CRIv02.nc","/home/tethys/geotiff_global/","lwe_thickness")
+    #upload_global_tiff("/home/tethys/geotiff_global/","http://tethys.servirglobal.net:8181/geoserver/rest/","graceglobal")
     Session = Grace.get_persistent_store_database('main_db',as_sessionmaker=True)
     session = Session()
     # Query DB for regions
@@ -250,18 +250,38 @@ def global_map(request):
     color_bar = get_color_bar()
     color_bar = json.dumps(color_bar)
     # Connecting to the Geoserver
-    geoserver_engine = get_spatial_dataset_engine(name='grace')
-    stores = geoserver_engine.list_stores(workspace='globalgrace')
+    # geoserver_engine = get_spatial_dataset_engine(name='grace')
+    # stores = geoserver_engine.list_stores(workspace='grace')
+    #
+    # grace_layer_options = []
+    # sorted_stores = sorted(stores['result'], key=lambda x: datetime.strptime(x, '%Y_%m_%d'))
+    # for store in sorted_stores:
+    #     year = int(store.split('_')[0])
+    #     month = int(store.split('_')[1])
+    #     day = int(store.split('_')[2])
+    #     date_str = datetime(year, month, day)
+    #     date_str = date_str.strftime("%Y %B %d")
+    #     grace_layer_options.append([date_str, store])
 
+    FILE_DIR = os.path.join(NETCDF_DIR, '')
+
+    region_dir = os.path.join(FILE_DIR + 'niger', '')
+
+    geotiff_dir = os.path.join(region_dir + "geotiff")
+
+    sorted_files = sorted(os.listdir(geotiff_dir), key=lambda x: datetime.strptime(x, '%Y_%m_%d.tif'))
+    layers_length = len(sorted_files)
     grace_layer_options = []
-    sorted_stores = sorted(stores['result'], key=lambda x: datetime.strptime(x, '%Y_%m_%d'))
-    for store in sorted_stores:
-        year = int(store.split('_')[0])
-        month = int(store.split('_')[1])
-        day = int(store.split('_')[2])
+
+    for file in sorted_files:
+        year = int(file[:-4].split('_')[0])
+        month = int(file[:-4].split('_')[1])
+        day = int(file[:-4].split('_')[2])
         date_str = datetime(year, month, day)
         date_str = date_str.strftime("%Y %B %d")
-        grace_layer_options.append([date_str, store])
+        grace_layer_options.append([date_str, file[:-4]])
+
+
 
     slider_max = len(grace_layer_options)
 

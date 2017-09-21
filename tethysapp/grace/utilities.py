@@ -208,7 +208,7 @@ def upload_global_tiff(dir,geoserver_rest_url,workspace):
     }
 
     dir = os.path.join(dir, '')
-    for file in os.listdir(dir): #Looping through all the files in the given directory
+    for file in sorted(os.listdir(dir)): #Looping through all the files in the given directory
         if file is None:
             print "No files. Please check directory and try again."
             sys.exit()
